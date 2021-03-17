@@ -3,7 +3,6 @@
   "cli": {
     "defaultCollection": "@nrwl/angular"
   },
-  "defaultProject": "cms",
   "schematics": {
     "@nrwl/angular": {
       "application": {
@@ -31,91 +30,5 @@
       "style": "scss"
     }
   },
-  "projects": {
-    "cms": {
-      "projectType": "application",
-      "root": "apps/cms",
-      "sourceRoot": "apps/cms/src",
-      "prefix": "shopon",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:browser",
-          "options": {
-            "outputPath": "dist/apps/cms",
-            "index": "apps/cms/src/index.html",
-            "main": "apps/cms/src/main.ts",
-            "polyfills": "apps/cms/src/polyfills.ts",
-            "tsConfig": "apps/cms/tsconfig.app.json",
-            "aot": true,
-            "assets": ["apps/cms/src/favicon.ico", "apps/cms/src/assets"],
-            "styles": ["apps/cms/src/styles.scss"],
-            "scripts": []
-          },
-          "configurations": {
-            "production": {
-              "fileReplacements": [
-                {
-                  "replace": "apps/cms/src/environments/environment.ts",
-                  "with": "apps/cms/src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "namedChunks": false,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
-                }
-              ]
-            }
-          }
-        },
-        "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "cms:build"
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "cms:build:production"
-            }
-          }
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "cms:build"
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "apps/cms/src/**/*.ts",
-              "apps/cms/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/cms"],
-          "options": {
-            "jestConfig": "apps/cms/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    }
-  }
+  "projects": {}
 }
