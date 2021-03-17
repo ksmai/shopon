@@ -22,5 +22,13 @@
       }
     }
   },
-  "projects": {}
+  "projects": {
+    "landing-page": {
+      "tags": []
+    },
+    "landing-page-e2e": {
+      "tags": [],
+      "implicitDependencies": ["landing-page"]
+    }
+  }
 }
