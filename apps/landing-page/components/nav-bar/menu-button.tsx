@@ -5,7 +5,7 @@ import { ReactComponent as MenuIcon } from '../../public/menu-icon.svg';
 
 /* eslint-disable-next-line */
 export interface MenuButtonProps {
-  onClick?: () => void;
+  onClick: () => void;
 }
 
 const menuIcon = css`
@@ -22,9 +22,10 @@ const menuButton = css`
 export function MenuButton({ onClick }: MenuButtonProps) {
   return (
     <button
-      type="button"
       css={menuButton}
+      data-testid="menu-button"
       onClick={onClick}
+      type="button"
     >
       <MenuIcon css={menuIcon} />
     </button>
