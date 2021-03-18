@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-import Layout from '../components/shared/Layout';
+import DefaultLayout from '../components/shared/default-layout';
 
 const StyledPage = styled.div`
   .page {
@@ -10,10 +10,10 @@ const StyledPage = styled.div`
 
 function Index() {
   return (
-    <Layout>
+    <DefaultLayout>
       <StyledPage>
       </StyledPage>
-    </Layout>
+    </DefaultLayout>
   );
 }
 
