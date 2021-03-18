@@ -3,7 +3,6 @@ import { AppProps } from 'next/app';
 import Head from 'next/head';
 
 import '../styles/styles.css';
-import Layout from '../components/shared/Layout';
 
 function CustomApp({ Component, pageProps }: AppProps) {
   return (
@@ -12,9 +11,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
         <title>Shopon</title>
       </Head>
 
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <Component {...pageProps} />
     </>
   );
 }

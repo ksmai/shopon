@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
+import Layout from '../components/shared/Layout';
+
 const StyledPage = styled.div`
   .page {
   }
@@ -8,8 +10,10 @@ const StyledPage = styled.div`
 
 function Index() {
   return (
-    <StyledPage>
-    </StyledPage>
+    <Layout>
+      <StyledPage>
+      </StyledPage>
+    </Layout>
   );
 }
 
