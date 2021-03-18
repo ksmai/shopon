@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from '@emotion/styled';
+import { css } from '@emotion/react';
 
 import NavBar from '../nav-bar';
 
@@ -8,7 +8,7 @@ export interface DefaultLayoutProps {
   children: React.ReactNode;
 }
 
-const StickyHeader = styled.header`
+const header = css`
   position: sticky;
   top: 0;
   left: 0;
@@ -18,9 +18,9 @@ const StickyHeader = styled.header`
 export function DefaultLayout({ children }: DefaultLayoutProps) {
   return (
     <>
-      <StickyHeader>
+      <header css={header}>
         <NavBar />
-      </StickyHeader>
+      </header>
       <main>
         {children}
       </main>

@@ -1,26 +1,26 @@
 import React from 'react';
-import styled from '@emotion/styled';
+import { css } from '@emotion/react';
 
 import Logo from '../shared/logo';
 
 /* eslint-disable-next-line */
 export interface NavBarProps {}
 
-const Nav = styled.nav`
+const nav = css`
   padding: 20px 20px;
   display: flex;
   align-items: center;
 `;
 
-const NavLogo = styled(Logo)`
+const logo = css`
   width: 128px;
 `;
 
 export function NavBar() {
   return (
-    <Nav>
-      <NavLogo />
-    </Nav>
+    <nav css={nav}>
+      <Logo css={logo} />
+    </nav>
   );
 }
 
