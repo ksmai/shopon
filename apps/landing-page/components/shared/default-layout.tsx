@@ -1,18 +1,30 @@
 import React from 'react';
-
 import styled from '@emotion/styled';
+
+import NavBar from '../nav-bar';
 
 /* eslint-disable-next-line */
 export interface DefaultLayoutProps {
   children: React.ReactNode;
 }
 
+const StickyHeader = styled.header`
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+`
+
 export function DefaultLayout({ children }: DefaultLayoutProps) {
   return (
-    <main>
-      <h1>Welcome to default-layout!</h1>
-      {children}
-    </main>
+    <>
+      <StickyHeader>
+        <NavBar />
+      </StickyHeader>
+      <main>
+        {children}
+      </main>
+    </>
   );
 }
 
