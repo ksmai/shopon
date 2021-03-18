@@ -2,8 +2,8 @@ import React from 'react';
 import { css } from '@emotion/react';
 
 import Logo from '../shared/logo';
-import { ReactComponent as MenuIcon } from '../../public/menu-icon.svg';
 import LoginButton from './login-button';
+import Menu from './menu';
 
 /* eslint-disable-next-line */
 export interface NavBarProps {}
@@ -22,28 +22,12 @@ const loginButton = css`
   margin-left: auto;
 `;
 
-const menuButton = css`
-  padding: .5rem;
-  background: none;
-  border: none;
-`;
-
-const menuIcon = css`
-  width: 1.5rem;
-  height: 1.5rem;
-`;
-
 export function NavBar() {
   return (
     <nav css={nav}>
       <Logo css={logo} />
-      <button
-        type="button"
-        css={menuButton}
-      >
-        <MenuIcon css={menuIcon} />
-      </button>
       <LoginButton css={loginButton} />
+      <Menu />
     </nav>
   );
 }
