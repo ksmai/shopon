@@ -3,7 +3,7 @@ import { css } from '@emotion/react';
 
 import Logo from '../shared/logo';
 import LoginButton from './login-button';
-import Menu from './menu';
+import MenuButton from './menu-button';
 
 /* eslint-disable-next-line */
 export interface NavBarProps {}
@@ -27,7 +27,7 @@ export function NavBar() {
     <nav css={nav}>
       <Logo css={logo} />
       <LoginButton css={loginButton} />
-      <Menu />
+      <MenuButton />
     </nav>
   );
 }

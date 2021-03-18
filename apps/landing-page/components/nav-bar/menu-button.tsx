@@ -4,7 +4,9 @@ import { css } from '@emotion/react';
 import { ReactComponent as MenuIcon } from '../../public/menu-icon.svg';
 
 /* eslint-disable-next-line */
-export interface MenuProps {}
+export interface MenuButtonProps {
+  onClick?: () => void;
+}
 
 const menuIcon = css`
   width: 1.5rem;
@@ -17,15 +19,16 @@ const menuButton = css`
   border: none;
 `;
 
-export function Menu() {
+export function MenuButton({ onClick }: MenuButtonProps) {
   return (
     <button
       type="button"
       css={menuButton}
+      onClick={onClick}
     >
       <MenuIcon css={menuIcon} />
     </button>
   );
 }
 
-export default Menu;
+export default MenuButton;
