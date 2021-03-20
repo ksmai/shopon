@@ -3,7 +3,7 @@
   "cli": {
     "defaultCollection": "@nrwl/angular"
   },
-  "defaultProject": "landing-page",
+  "defaultProject": "homepage",
   "schematics": {
     "@nrwl/angular": {
       "application": {
@@ -43,17 +43,23 @@
     }
   },
   "projects": {
-    "landing-page": {
-      "root": "apps/landing-page",
-      "sourceRoot": "apps/landing-page",
+    "shared-assets": {
+      "root": "libs/shared/assets",
+      "sourceRoot": "libs/shared/assets/src",
+      "projectType": "library",
+      "architect": {}
+    },
+    "homepage": {
+      "root": "apps/homepage",
+      "sourceRoot": "apps/homepage",
       "projectType": "application",
       "architect": {
         "build": {
           "builder": "@nrwl/next:build",
           "outputs": ["{options.outputPath}"],
           "options": {
-            "root": "apps/landing-page",
-            "outputPath": "dist/apps/landing-page"
+            "root": "apps/homepage",
+            "outputPath": "dist/apps/homepage"
           },
           "configurations": {
             "production": {}
@@ -62,12 +68,12 @@
         "serve": {
           "builder": "@nrwl/next:server",
           "options": {
-            "buildTarget": "landing-page:build",
+            "buildTarget": "homepage:build",
             "dev": true
           },
           "configurations": {
             "production": {
-              "buildTarget": "landing-page:build:production",
+              "buildTarget": "homepage:build:production",
               "dev": false
             }
           }
@@ -75,56 +81,49 @@
         "export": {
           "builder": "@nrwl/next:export",
           "options": {
-            "buildTarget": "landing-page:build:production"
+            "buildTarget": "homepage:build:production"
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/landing-page"],
+          "outputs": ["coverage/apps/homepage"],
           "options": {
-            "jestConfig": "apps/landing-page/jest.config.js",
+            "jestConfig": "apps/homepage/jest.config.js",
             "passWithNoTests": true
           }
         },
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/landing-page/**/*.{ts,tsx,js,jsx}"]
+            "lintFilePatterns": ["apps/homepage/**/*.{ts,tsx,js,jsx}"]
           }
         }
       }
     },
-    "landing-page-e2e": {
-      "root": "apps/landing-page-e2e",
-      "sourceRoot": "apps/landing-page-e2e/src",
+    "homepage-e2e": {
+      "root": "apps/homepage-e2e",
+      "sourceRoot": "apps/homepage-e2e/src",
       "projectType": "application",
       "architect": {
         "e2e": {
           "builder": "@nrwl/cypress:cypress",
           "options": {
-            "cypressConfig": "apps/landing-page-e2e/cypress.json",
-            "tsConfig": "apps/landing-page-e2e/tsconfig.e2e.json",
-            "devServerTarget": "landing-page:serve"
+            "cypressConfig": "apps/homepage-e2e/cypress.json",
+            "tsConfig": "apps/homepage-e2e/tsconfig.e2e.json",
+            "devServerTarget": "homepage:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "landing-page:serve:production"
+              "devServerTarget": "homepage:serve:production"
             }
           }
         },
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/landing-page-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": ["apps/homepage-e2e/**/*.{js,ts}"]
           }
         }
-      }
-    },
-    "shared-assets": {
-      "root": "libs/shared/assets",
-      "sourceRoot": "libs/shared/assets/src",
-      "projectType": "library",
-      "architect": {
       }
     }
   }

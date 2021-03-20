@@ -17,18 +17,14 @@ const loginButton = css`
   &:active,
   &:focus,
   &:hover {
-    opacity: .5;
+    opacity: 0.5;
   }
 `;
 
 export function LoginButton({ className }: LoginButtonProps) {
   return (
     <Link href="/login" passHref>
-      <a
-        href="/login"
-        css={loginButton}
-        className={className}
-      >
+      <a href="/login" css={loginButton} className={className}>
         Log in
       </a>
     </Link>

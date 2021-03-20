@@ -13,7 +13,7 @@ const header = css`
   top: 0;
   left: 0;
   right: 0;
-`
+`;
 
 export function DefaultLayout({ children }: DefaultLayoutProps) {
   return (
@@ -21,9 +21,7 @@ export function DefaultLayout({ children }: DefaultLayoutProps) {
       <header css={header}>
         <NavBar />
       </header>
-      <main>
-        {children}
-      </main>
+      <main>{children}</main>
     </>
   );
 }

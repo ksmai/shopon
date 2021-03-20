@@ -11,7 +11,7 @@ export interface LogoProps {
 
 const img = css`
   width: 128px;
-`
+`;
 
 export function Logo({ className }: LogoProps) {
   return (

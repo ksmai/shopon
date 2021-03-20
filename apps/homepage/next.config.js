@@ -2,6 +2,8 @@
 const withNx = require('@nrwl/next/plugins/with-nx');
 const withOptimizedImages = require('next-optimized-images');
 
-module.exports = withNx(withOptimizedImages({
-  images: { handleImages: ['jpeg', 'png', 'webp'] }
-}));
+module.exports = withNx(
+  withOptimizedImages({
+    images: { handleImages: ['jpeg', 'png', 'webp'] },
+  })
+);

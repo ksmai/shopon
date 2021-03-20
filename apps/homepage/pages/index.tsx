@@ -11,8 +11,7 @@ const StyledPage = styled.div`
 function Index() {
   return (
     <DefaultLayout>
-      <StyledPage>
-      </StyledPage>
+      <StyledPage></StyledPage>
     </DefaultLayout>
   );
 }

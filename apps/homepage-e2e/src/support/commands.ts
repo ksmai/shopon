@@ -18,9 +18,12 @@ declare namespace Cypress {
 
 type GetByTestIDOptions = Parameters<Cypress.Chainable['get']>[1];
 
-Cypress.Commands.add('getByTestID', (testID: string, options?: GetByTestIDOptions) => {
-  return cy.get(`[data-testid=${testID}]`, options);
-});
+Cypress.Commands.add(
+  'getByTestID',
+  (testID: string, options?: GetByTestIDOptions) => {
+    return cy.get(`[data-testid=${testID}]`, options);
+  }
+);
 
 //
 // -- This is a parent command --

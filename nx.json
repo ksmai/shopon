@@ -1,26 +1,37 @@
 {
   "implicitDependencies": {
     "angular.json": "*",
-    "package.json": { "dependencies": "*", "devDependencies": "*" },
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
     "tsconfig.base.json": "*",
     "tslint.json": "*",
     ".eslintrc.json": "*",
     "nx.json": "*"
   },
-  "affected": { "defaultBase": "master" },
+  "affected": {
+    "defaultBase": "master"
+  },
   "npmScope": "shopon",
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
-      "options": { "cacheableOperations": ["build", "lint", "test", "e2e"] }
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
+      }
     }
   },
   "projects": {
-    "landing-page": { "tags": [] },
-    "landing-page-e2e": {
-      "tags": [],
-      "implicitDependencies": ["landing-page"]
+    "shared-assets": {
+      "tags": []
     },
-    "shared-assets": { "tags": [] }
+    "homepage": {
+      "tags": []
+    },
+    "homepage-e2e": {
+      "tags": [],
+      "implicitDependencies": ["homepage"]
+    }
   }
 }

@@ -15,7 +15,7 @@ const menuIcon = css`
 `;
 
 const menuButton = css`
-  padding: .5rem;
+  padding: 0.5rem;
   background: none;
   border: none;
 `;
@@ -28,11 +28,7 @@ export function MenuButton({ onClick }: MenuButtonProps) {
       onClick={onClick}
       type="button"
     >
-      <Img
-        src={MenuIconSrc}
-        alt="menu"
-        css={menuIcon}
-      />
+      <Img src={MenuIconSrc} alt="menu" css={menuIcon} />
     </button>
   );
 }
