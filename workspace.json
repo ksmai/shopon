@@ -1,10 +1,21 @@
 {
   "version": 2,
-  "cli": { "defaultCollection": "@nrwl/next" },
+  "cli": {
+    "defaultCollection": "@nrwl/next"
+  },
   "defaultProject": "homepage",
   "generators": {
-    "@nrwl/react": { "application": { "babel": true } },
-    "@nrwl/next": { "application": { "style": "scss", "linter": "eslint" } }
+    "@nrwl/react": {
+      "application": {
+        "babel": true
+      }
+    },
+    "@nrwl/next": {
+      "application": {
+        "style": "scss",
+        "linter": "eslint"
+      }
+    }
   },
   "projects": {
     "shared-assets": {
@@ -31,11 +42,16 @@
             "root": "apps/homepage",
             "outputPath": "dist/apps/homepage"
           },
-          "configurations": { "production": {} }
+          "configurations": {
+            "production": {}
+          }
         },
         "serve": {
           "executor": "@nrwl/next:server",
-          "options": { "buildTarget": "homepage:build", "dev": true },
+          "options": {
+            "buildTarget": "homepage:build",
+            "dev": true
+          },
           "configurations": {
             "production": {
               "buildTarget": "homepage:build:production",
@@ -45,7 +61,9 @@
         },
         "export": {
           "executor": "@nrwl/next:export",
-          "options": { "buildTarget": "homepage:build:production" }
+          "options": {
+            "buildTarget": "homepage:build:production"
+          }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
@@ -76,32 +94,15 @@
             "devServerTarget": "homepage:serve"
           },
           "configurations": {
-            "production": { "devServerTarget": "homepage:serve:production" }
+            "production": {
+              "devServerTarget": "homepage:serve:production"
+            }
           }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "options": { "lintFilePatterns": ["apps/homepage-e2e/**/*.{js,ts}"] }
-        }
-      }
-    },
-    "homepage-shared": {
-      "root": "libs/homepage/shared",
-      "sourceRoot": "libs/homepage/shared/src",
-      "projectType": "library",
-      "targets": {
-        "lint": {
-          "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/homepage/shared/**/*.{ts,tsx,js,jsx}"]
-          }
-        },
-        "test": {
-          "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/homepage/shared"],
-          "options": {
-            "jestConfig": "libs/homepage/shared/jest.config.js",
-            "passWithNoTests": true
+            "lintFilePatterns": ["apps/homepage-e2e/**/*.{js,ts}"]
           }
         }
       }
@@ -122,6 +123,29 @@
           "outputs": ["coverage/libs/homepage/index"],
           "options": {
             "jestConfig": "libs/homepage/index/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "homepage-custom-app": {
+      "root": "libs/homepage/custom-app",
+      "sourceRoot": "libs/homepage/custom-app/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/homepage/custom-app/**/*.{ts,tsx,js,jsx}"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/homepage/custom-app"],
+          "options": {
+            "jestConfig": "libs/homepage/custom-app/jest.config.js",
             "passWithNoTests": true
           }
         }
