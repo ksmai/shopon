@@ -2,7 +2,7 @@ import React from 'react';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 
-import '../styles/styles.css';
+import '@shopon/shared/styles/base.css';
 
 function CustomApp({ Component, pageProps }: AppProps) {
   return (
