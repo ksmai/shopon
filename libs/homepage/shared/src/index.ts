@@ -1,1 +1,2 @@
-export * from './lib/homepage-shared';
+import DefaultLayout from './lib/default-layout';
+export { DefaultLayout };

@@ -1,7 +1,7 @@
 import React from 'react';
 import { css } from '@emotion/react';
 
-import NavBar from '../nav-bar';
+import NavBar from './nav-bar';
 
 /* eslint-disable-next-line */
 export interface DefaultLayoutProps {

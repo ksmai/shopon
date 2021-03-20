@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-import DefaultLayout from '../components/shared/default-layout';
+import { DefaultLayout } from '@shopon/homepage/shared';
 
 const StyledPage = styled.div`
   .page {

@@ -21,6 +21,7 @@ export function Logo({ className }: LogoProps) {
       webp
       sizes={[128]}
       densities={[1, 2]}
+      // work around a bug where a media="(max-width:128px)" is added for some reasons. make it 10000 so that the constraint is essentially useless
       breakpoints={[10000]}
       className={className}
       css={img}

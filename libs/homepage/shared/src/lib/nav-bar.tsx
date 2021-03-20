@@ -1,7 +1,7 @@
 import React from 'react';
 import { css } from '@emotion/react';
 
-import Logo from '../shared/logo';
+import Logo from './logo';
 import LoginButton from './login-button';
 import MenuButton from './menu-button';
 
