@@ -15,5 +15,8 @@
       "options": { "cacheableOperations": ["build", "lint", "test", "e2e"] }
     }
   },
-  "projects": { "shared-assets": { "tags": [] } }
+  "projects": {
+    "shared-assets": { "tags": [] },
+    "shared-styles": { "tags": [] }
+  }
 }

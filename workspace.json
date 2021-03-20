@@ -5,6 +5,12 @@
       "root": "libs/shared/assets",
       "sourceRoot": "libs/shared/assets",
       "projectType": "library",
+      "targets": {}
+    },
+    "shared-styles": {
+      "root": "libs/shared/styles",
+      "sourceRoot": "libs/shared/styles/src",
+      "projectType": "library",
       "targets": {
       }
     }

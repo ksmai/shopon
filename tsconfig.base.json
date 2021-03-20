@@ -16,7 +16,8 @@
     "strict": true,
     "baseUrl": ".",
     "paths": {
-      "@shopon/shared/assets/*": ["libs/shared/assets/*"]
+      "@shopon/shared/assets/*": ["libs/shared/assets/*"],
+      "@shopon/shared/styles/*": ["libs/shared/styles/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]
