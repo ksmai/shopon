@@ -18,7 +18,8 @@
     "paths": {
       "@shopon/shared/assets/*": ["libs/shared/assets/*"],
       "@shopon/shared/styles/*": ["libs/shared/styles/*"],
-      "@shopon/homepage/shared": ["libs/homepage/shared/src/index.ts"]
+      "@shopon/homepage/shared": ["libs/homepage/shared/src/index.ts"],
+      "@shopon/homepage/index": ["libs/homepage/index/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

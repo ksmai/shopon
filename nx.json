@@ -20,6 +20,7 @@
     "shared-styles": { "tags": [] },
     "homepage": { "tags": [] },
     "homepage-e2e": { "tags": [], "implicitDependencies": ["homepage"] },
-    "homepage-shared": { "tags": [] }
+    "homepage-shared": { "tags": [] },
+    "homepage-index": { "tags": [] }
   }
 }
