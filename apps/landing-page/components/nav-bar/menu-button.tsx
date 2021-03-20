@@ -1,7 +1,8 @@
 import React from 'react';
 import { css } from '@emotion/react';
+import Img from 'react-optimized-image';
 
-import { ReactComponent as MenuIcon } from '../../public/menu-icon.svg';
+import MenuIconSrc from '../../public/menu-icon.svg';
 
 /* eslint-disable-next-line */
 export interface MenuButtonProps {
@@ -27,7 +28,11 @@ export function MenuButton({ onClick }: MenuButtonProps) {
       onClick={onClick}
       type="button"
     >
-      <MenuIcon css={menuIcon} />
+      <Img
+        src={MenuIconSrc}
+        alt="menu"
+        css={menuIcon}
+      />
     </button>
   );
 }
