@@ -1,10 +1,13 @@
 {
-  
-  
   "version": 2,
-  
-  "projects": {},
-  "cli": {
-    "defaultCollection": "@nrwl/workspace"
-  }
+  "projects": {
+    "shared-assets": {
+      "root": "libs/shared/assets",
+      "sourceRoot": "libs/shared/assets",
+      "projectType": "library",
+      "targets": {
+      }
+    }
+  },
+  "cli": { "defaultCollection": "@nrwl/workspace" }
 }

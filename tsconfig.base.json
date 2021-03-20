@@ -13,8 +13,11 @@
     "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
+    "strict": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@shopon/shared/assets/*": ["libs/shared/assets/*"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
