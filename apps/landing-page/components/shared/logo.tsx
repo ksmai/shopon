@@ -1,26 +1,30 @@
 import React from 'react';
-import Image from 'next/image';
+import Img from 'react-optimized-image';
 import { css } from '@emotion/react';
+
+import LogoSrc from '../../public/shopon-logo-long.png';
 
 /* eslint-disable-next-line */
 export interface LogoProps {
   className?: string;
 }
 
-const wrapper = css`
-  position: relative;
+const img = css`
+  width: 128px;
 `
 
 export function Logo({ className }: LogoProps) {
   return (
-    <div css={wrapper} className={className}>
-      <Image
-        src="/shopon-logo-long.png"
-        alt="Shopon"
-        width={2046}
-        height={657}
-      />
-    </div>
+    <Img
+      src={LogoSrc}
+      alt="Shopon"
+      webp
+      sizes={[128]}
+      densities={[1, 2]}
+      breakpoints={[10000]}
+      className={className}
+      css={img}
+    />
   );
 }
 
