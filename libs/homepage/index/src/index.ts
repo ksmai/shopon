@@ -1,1 +1,3 @@
-export * from './lib/homepage-index';
+import Index from './lib/index';
+
+export { Index };
