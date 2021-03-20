@@ -1,2 +1,2 @@
-import CustomApp from './lib/custom-app';
+import CustomApp from './custom-app';
 export { CustomApp };
