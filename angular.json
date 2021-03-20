@@ -84,14 +84,6 @@
             "buildTarget": "homepage:build:production"
           }
         },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/homepage"],
-          "options": {
-            "jestConfig": "apps/homepage/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
