@@ -1,2 +1,2 @@
-import DefaultLayout from './lib/default-layout';
 export { DefaultLayout };
+import { DefaultLayout } from './lib/default-layout';
