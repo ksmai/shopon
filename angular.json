@@ -130,7 +130,27 @@
       "root": "libs/shared/styles",
       "sourceRoot": "libs/shared/styles",
       "projectType": "library",
+      "architect": {}
+    },
+    "homepage-shared": {
+      "root": "libs/homepage/shared",
+      "sourceRoot": "libs/homepage/shared/src",
+      "projectType": "library",
       "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/homepage/shared/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/homepage/shared"],
+          "options": {
+            "jestConfig": "libs/homepage/shared/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
       }
     }
   }

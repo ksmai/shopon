@@ -19,6 +19,7 @@
     "shared-assets": { "tags": [] },
     "homepage": { "tags": [] },
     "homepage-e2e": { "tags": [], "implicitDependencies": ["homepage"] },
-    "shared-styles": { "tags": [] }
+    "shared-styles": { "tags": [] },
+    "homepage-shared": { "tags": [] }
   }
 }
