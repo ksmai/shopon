@@ -45,7 +45,7 @@
   "projects": {
     "shared-assets": {
       "root": "libs/shared/assets",
-      "sourceRoot": "libs/shared/assets/src",
+      "sourceRoot": "libs/shared/assets",
       "projectType": "library",
       "architect": {}
     },
