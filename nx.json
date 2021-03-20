@@ -36,10 +36,10 @@
       "tags": [],
       "implicitDependencies": ["homepage"]
     },
-    "homepage-index": {
+    "homepage-custom-app": {
       "tags": []
     },
-    "homepage-custom-app": {
+    "homepage-index-page": {
       "tags": []
     }
   }
