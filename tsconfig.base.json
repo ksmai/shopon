@@ -14,7 +14,9 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@shopon/shared/assets/*": ["libs/shared/assets/*"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import Img from 'react-optimized-image';
 import { css } from '@emotion/react';
 
-import LogoSrc from '../../public/shopon-logo-long.png';
+import LogoSrc from '@shopon/shared/assets/shopon-logo-long.png';
 
 /* eslint-disable-next-line */
 export interface LogoProps {
