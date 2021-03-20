@@ -101,6 +101,7 @@
     "eslint-plugin-react-hooks": "4.2.0",
     "jest": "26.2.2",
     "jest-preset-angular": "8.3.2",
+    "next-optimized-images": "^3.0.0-canary.10",
     "prettier": "2.2.1",
     "ts-jest": "26.4.0",
     "ts-node": "~9.1.1",

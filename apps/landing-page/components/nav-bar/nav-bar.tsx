@@ -23,11 +23,12 @@ const loginButton = css`
 `;
 
 export function NavBar() {
+  const handleClickMenuButton = () => 0;
   return (
     <nav css={nav}>
       <Logo css={logo} />
       <LoginButton css={loginButton} />
-      <MenuButton />
+      <MenuButton onClick={handleClickMenuButton} />
     </nav>
   );
 }
