@@ -1,6 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import Link from 'next/link';
 import { Button, Layer, Box } from 'grommet';
+import { Close } from 'grommet-icons';
 
 import './side-nav.module.scss';
 
@@ -49,13 +50,17 @@ export function SideNav({ open, onClose, navItems }: SideNavProps) {
       onClickOutside={onClose}
       onEsc={onClose}
     >
-      <Box fill background="brand" style={{ width: '300px' }} as="nav">
+      <Box fill style={{ width: '300px' }} as="nav">
         <Link href="/" passHref>
           <a href="/" onClick={onClose}>
             <span data-testid="side-nav-logo">TODO</span>
           </a>
         </Link>
-        <Button data-testid="side-nav-close-button" onClick={onClose} />
+        <Button
+          data-testid="side-nav-close-button"
+          onClick={onClose}
+          icon={<Close />}
+        />
 
         {renderNavItems(navItems, openedNavs, toggleNav, onClose)}
       </Box>
