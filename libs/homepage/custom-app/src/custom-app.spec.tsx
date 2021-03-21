@@ -1,5 +1,4 @@
 import React from 'react';
-import { AppProps } from 'next/app';
 import { render, screen } from '@testing-library/react';
 
 import CustomApp from './custom-app';
@@ -12,7 +11,6 @@ describe('CustomApp', () => {
   let componentText: string;
   let propText: string;
   let Component: React.FunctionComponent<ComponentProps>;
-  let router: AppProps['router'];
 
   beforeEach(() => {
     componentText = 'Component Text';
@@ -23,14 +21,7 @@ describe('CustomApp', () => {
         <span>{props.propText}</span>
       </div>
     );
-    router = (jest.fn() as unknown) as AppProps['router'];
-    render(
-      <CustomApp
-        Component={(Component as unknown) as AppProps['Component']}
-        pageProps={{ propText }}
-        router={router}
-      />
-    );
+    render(<CustomApp Component={Component} pageProps={{ propText }} />);
   });
 
   it('should render Component', () => {
