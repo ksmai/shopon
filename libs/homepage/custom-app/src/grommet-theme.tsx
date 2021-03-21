@@ -24,7 +24,7 @@ const theme: ThemeType = {
 
 export function GrommetTheme({ children }: GrommetThemeProps) {
   return (
-    <Grommet plain theme={theme}>
+    <Grommet plain theme={theme} full>
       {children}
     </Grommet>
   );
