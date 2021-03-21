@@ -1,1 +1,3 @@
-export * from './lib/homepage-default-layout';
+import DefaultLayout from './default-layout';
+
+export { DefaultLayout };
