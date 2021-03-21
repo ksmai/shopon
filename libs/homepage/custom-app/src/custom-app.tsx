@@ -1,17 +1,15 @@
 import React from 'react';
 import { AppProps } from 'next/app';
-import Head from 'next/head';
 
 import GrommetTheme from './grommet-theme';
+import DefaultMetadata from './default-metadata';
 
 type CustomAppProps<P> = Pick<AppProps<P>, 'Component' | 'pageProps'>;
 
 function CustomApp<P>({ Component, pageProps }: CustomAppProps<P>) {
   return (
     <>
-      <Head>
-        <title>Shopon</title>
-      </Head>
+      <DefaultMetadata />
       <GrommetTheme>
         <Component {...pageProps} />
       </GrommetTheme>
