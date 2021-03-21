@@ -18,10 +18,11 @@ export type NavItem = NavLink | NavGroup;
 
 type OpenedNavs = Record<string, boolean>;
 type ToggleNav = (name: string) => void;
+type OnClose = () => void;
 
 export interface SideNavProps {
   open: boolean;
-  onClose: () => void;
+  onClose: OnClose;
   navItems: NavItem[];
 }
 
@@ -56,7 +57,7 @@ export function SideNav({ open, onClose, navItems }: SideNavProps) {
         </Link>
         <Button data-testid="close-button" onClick={onClose} />
 
-        {renderNavItems(navItems, openedNavs, toggleNav)}
+        {renderNavItems(navItems, openedNavs, toggleNav, onClose)}
       </Box>
     </Layer>
   );
@@ -65,7 +66,8 @@ export function SideNav({ open, onClose, navItems }: SideNavProps) {
 function renderNavItems(
   navItems: NavItem[],
   openedNavs: OpenedNavs,
-  toggleNav: ToggleNav
+  toggleNav: ToggleNav,
+  onClose: OnClose
 ): React.ReactNode {
   return navItems.map((navItem) => {
     if ('children' in navItem) {
@@ -75,13 +77,13 @@ function renderNavItems(
             {navItem.name}
           </button>
           {openedNavs[navItem.name] &&
-            renderNavItems(navItem.children, openedNavs, toggleNav)}
+            renderNavItems(navItem.children, openedNavs, toggleNav, onClose)}
         </React.Fragment>
       );
     }
 
     return (
-      <a href={navItem.href} key={navItem.name}>
+      <a href={navItem.href} key={navItem.name} onClick={onClose}>
         {navItem.name}
       </a>
     );

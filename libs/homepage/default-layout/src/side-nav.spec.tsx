@@ -117,5 +117,11 @@ describe('SideNav', () => {
         threeLevelLink3.href
       );
     });
+
+    it('should call onClose when a link is clicked', () => {
+      const link = screen.getByText(oneLevelLink.name);
+      fireEvent.click(link);
+      expect(onClose).toHaveBeenCalledTimes(1);
+    });
   });
 });
