@@ -51,11 +51,11 @@ export function SideNav({ open, onClose, navItems }: SideNavProps) {
     >
       <Box fill background="brand" style={{ width: '300px' }} as="nav">
         <Link href="/" passHref>
-          <a href="/">
+          <a href="/" onClick={onClose}>
             <span data-testid="side-nav-logo">TODO</span>
           </a>
         </Link>
-        <Button data-testid="close-button" onClick={onClose} />
+        <Button data-testid="side-nav-close-button" onClick={onClose} />
 
         {renderNavItems(navItems, openedNavs, toggleNav, onClose)}
       </Box>
@@ -83,9 +83,11 @@ function renderNavItems(
     }
 
     return (
-      <a href={navItem.href} key={navItem.name} onClick={onClose}>
-        {navItem.name}
-      </a>
+      <Link href={navItem.href} key={navItem.name} passHref>
+        <a href={navItem.href} onClick={onClose}>
+          {navItem.name}
+        </a>
+      </Link>
     );
   });
 }

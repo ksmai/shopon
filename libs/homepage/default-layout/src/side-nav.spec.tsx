@@ -4,6 +4,11 @@ import '@testing-library/jest-dom';
 
 import SideNav, { NavItem, NavLink } from './side-nav';
 
+interface MockLinkProps {
+  children: React.ReactNode;
+}
+jest.mock('next/link', () => ({ children }: MockLinkProps) => children);
+
 interface TwoLevelLink {
   name: string;
   children: [NavLink];
@@ -55,8 +60,8 @@ describe('SideNav', () => {
       expect(logo).toBeNull();
     });
 
-    it('should not render close-button', () => {
-      const closeButton = screen.queryByTestId('close-button');
+    it('should not render close button', () => {
+      const closeButton = screen.queryByTestId('side-nav-close-button');
       expect(closeButton).toBeNull();
     });
 
@@ -76,8 +81,14 @@ describe('SideNav', () => {
       expect(logo.closest('a')).toHaveAttribute('href', '/');
     });
 
-    it('should call onClose on clicking close-button', () => {
-      const closeButton = screen.getByTestId('close-button');
+    it('should call onClose when logo is clicked', () => {
+      const logo = screen.getByTestId('side-nav-logo');
+      fireEvent.click(logo);
+      expect(onClose).toHaveBeenCalledTimes(1);
+    });
+
+    it('should call onClose on clicking close button', () => {
+      const closeButton = screen.getByTestId('side-nav-close-button');
       fireEvent.click(closeButton);
       expect(onClose).toHaveBeenCalledTimes(1);
     });
