@@ -19,7 +19,10 @@
       "@shopon/shared/assets/*": ["libs/shared/assets/*"],
       "@shopon/shared/styles/*": ["libs/shared/styles/*"],
       "@shopon/homepage/custom-app": ["libs/homepage/custom-app/src/index.ts"],
-      "@shopon/homepage/index-page": ["libs/homepage/index-page/src/index.ts"]
+      "@shopon/homepage/index-page": ["libs/homepage/index-page/src/index.ts"],
+      "@shopon/homepage/default-layout": [
+        "libs/homepage/default-layout/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]
