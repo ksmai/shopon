@@ -3,6 +3,7 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import SideNavLink from './side-nav-link';
+import Link from './link.interface';
 
 interface MockLinkProps {
   children: React.ReactNode;
@@ -10,28 +11,29 @@ interface MockLinkProps {
 jest.mock('next/link', () => ({ children }: MockLinkProps) => children);
 
 describe('SideNavLink', () => {
-  let name: string;
-  let href: string;
+  let link: Link;
   let onClick: () => void;
 
   beforeEach(() => {
-    name = 'Link Name';
-    href = '/test-href';
+    link = {
+      name: 'Link Name',
+      href: '/test-href',
+    };
     onClick = jest.fn<undefined, []>();
-    render(<SideNavLink name={name} href={href} onClick={onClick} />);
+    render(<SideNavLink link={link} onClick={onClick} />);
   });
 
   it('should render name', () => {
-    screen.getByText(name);
+    screen.getByText(link.name);
   });
 
   it('should render an anchor with href', () => {
-    const a = screen.getByText(name).closest('a');
-    expect(a).toHaveAttribute('href', href);
+    const a = screen.getByText(link.name).closest('a');
+    expect(a).toHaveAttribute('href', link.href);
   });
 
   it('should call onClick when clicked', () => {
-    const el = screen.getByText(name);
+    const el = screen.getByText(link.name);
     fireEvent.click(el);
     expect(onClick).toHaveBeenCalledTimes(1);
   });

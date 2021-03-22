@@ -1,21 +1,21 @@
 import React from 'react';
-import Link from 'next/link';
+import NextLink from 'next/link';
 
+import Link from './link.interface';
 import './side-nav-link.module.scss';
 
 export interface SideNavLinkProps {
-  name: string;
-  href: string;
+  link: Link;
   onClick: () => void;
 }
 
-export function SideNavLink({ name, href, onClick }: SideNavLinkProps) {
+export function SideNavLink({ link, onClick }: SideNavLinkProps) {
   return (
-    <Link href={href} passHref>
-      <a href={href} onClick={onClick}>
-        {name}
+    <NextLink href={link.href} passHref>
+      <a href={link.href} onClick={onClick}>
+        {link.name}
       </a>
-    </Link>
+    </NextLink>
   );
 }
 
