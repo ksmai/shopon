@@ -2,13 +2,9 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
+import './mock-next-link';
 import SideNavLink from './side-nav-link';
 import Link from './link.interface';
-
-interface MockLinkProps {
-  children: React.ReactNode;
-}
-jest.mock('next/link', () => ({ children }: MockLinkProps) => children);
 
 describe('SideNavLink', () => {
   let link: Link;
