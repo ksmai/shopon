@@ -4,7 +4,7 @@ import { Header, Anchor, Button } from 'grommet';
 import { Menu } from 'grommet-icons';
 
 import styles from './default-layout.module.scss';
-import SideNav from './side-nav';
+import SideNav from './side-nav/side-nav';
 import getNavItems from './get-nav-items';
 
 export interface DefaultLayoutProps {
