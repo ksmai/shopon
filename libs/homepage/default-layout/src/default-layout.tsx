@@ -25,7 +25,12 @@ export function DefaultLayout({ children }: DefaultLayoutProps) {
         <Header pad="medium" as="nav">
           <div className={styles['logo-wrapper']}></div>
           <Link href="/log-in" passHref>
-            <Anchor color="dark-1" href="#" label="Log in" />
+            <Anchor
+              data-testid="main-login-button"
+              color="dark-1"
+              href="#"
+              label="Log in"
+            />
           </Link>
           <Button icon={<Menu />} onClick={openMenu} />
         </Header>
