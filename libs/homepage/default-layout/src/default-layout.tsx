@@ -2,6 +2,8 @@ import React, { useState, useCallback } from 'react';
 import Link from 'next/link';
 import { Header, Anchor, Button } from 'grommet';
 import { Menu } from 'grommet-icons';
+import Img from 'react-optimized-image';
+import LogoSrc from '@shopon/shared/assets/shopon-logo-long.png';
 
 import styles from './default-layout.module.scss';
 import SideNav from './side-nav/side-nav';
@@ -23,7 +25,15 @@ export function DefaultLayout({ children }: DefaultLayoutProps) {
     <>
       <header className={styles.header}>
         <Header pad="medium" as="nav">
-          <div className={styles['logo-wrapper']}></div>
+          <div className={styles['logo-wrapper']}>
+            <Img
+              src={LogoSrc}
+              alt="Shopon"
+              className={styles.logo}
+              sizes={[128, 256]}
+              webp
+            />
+          </div>
           <Link href="/log-in" passHref>
             <Anchor
               data-testid="main-login-button"
