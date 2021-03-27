@@ -27,7 +27,6 @@ export function SideNavList({ navItems, onClick }: SideNavListProps) {
           <SideNavLink key={navItem.name} link={navItem} onClick={onClick} />
         );
       })}
-      ;
     </>
   );
 }

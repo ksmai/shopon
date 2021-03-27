@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import Link from 'next/link';
-import { Header, Anchor, Button } from 'grommet';
+import { Header, Anchor, Button, Box } from 'grommet';
 import { Menu } from 'grommet-icons';
 
 import styles from './default-layout.module.scss';
@@ -24,9 +24,9 @@ export function DefaultLayout({ children }: DefaultLayoutProps) {
     <>
       <header className={styles.header}>
         <Header pad="medium" as="nav">
-          <div className={styles['logo-wrapper']}>
-          </div>
+          <Box flex="grow">
             <SiteLogo className={styles.logo} />
+          </Box>
           <Link href="/log-in" passHref>
             <Anchor
               data-testid="main-login-button"
