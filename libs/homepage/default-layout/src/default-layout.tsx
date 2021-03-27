@@ -6,15 +6,14 @@ import { Menu } from 'grommet-icons';
 import styles from './default-layout.module.scss';
 import SideNav from './side-nav/side-nav';
 import SiteLogo from './site-logo';
-import getNavItems from './get-nav-items';
+import NavItem from './side-nav/nav-item.interface';
 
 export interface DefaultLayoutProps {
   children: React.ReactNode;
+  navItems: NavItem[];
 }
 
-const navItems = getNavItems();
-
-export function DefaultLayout({ children }: DefaultLayoutProps) {
+export function DefaultLayout({ children, navItems }: DefaultLayoutProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const openMenu = useCallback(() => setIsMenuOpen(true), [setIsMenuOpen]);
