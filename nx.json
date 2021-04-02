@@ -23,6 +23,7 @@
     "homepage-custom-app": { "tags": [] },
     "homepage-index-page": { "tags": [] },
     "homepage-default-layout": { "tags": [] },
-    "accounts": { "tags": [] }
+    "accounts": { "tags": [] },
+    "accounts-module": { "tags": [] }
   }
 }

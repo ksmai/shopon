@@ -22,7 +22,8 @@
       "@shopon/homepage/index-page": ["libs/homepage/index-page/src/index.ts"],
       "@shopon/homepage/default-layout": [
         "libs/homepage/default-layout/src/index.ts"
-      ]
+      ],
+      "@shopon/accounts/module": ["libs/accounts/module/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
