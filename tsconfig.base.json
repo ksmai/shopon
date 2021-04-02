@@ -23,7 +23,7 @@
       "@shopon/homepage/default-layout": [
         "libs/homepage/default-layout/src/index.ts"
       ],
-      "@shopon/accounts/module": ["libs/accounts/module/src/index.ts"]
+      "@shopon/accounts/controller": ["libs/accounts/controller/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
