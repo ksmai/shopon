@@ -22,6 +22,7 @@
     "homepage-e2e": { "tags": [], "implicitDependencies": ["homepage"] },
     "homepage-custom-app": { "tags": [] },
     "homepage-index-page": { "tags": [] },
-    "homepage-default-layout": { "tags": [] }
+    "homepage-default-layout": { "tags": [] },
+    "accounts": { "tags": [] }
   }
 }
