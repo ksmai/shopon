@@ -1,8 +1,12 @@
+import { right, getOrElseW } from 'fp-ts/lib/Either';
+
+import { DomainObject } from './domain-object';
 import { Entity } from './entity';
 
+@DomainObject()
 class TestEntity extends Entity {
   static create() {
-    return new TestEntity();
+    return right(new TestEntity());
   }
 
   getNamespaces() {
@@ -12,7 +16,7 @@ class TestEntity extends Entity {
 
 describe('Entity', () => {
   it('can be created with a namespaced id', () => {
-    const entity = TestEntity.create();
+    const entity = getOrElseW(fail)(TestEntity.create());
     const id = entity.getId().toString();
     for (const namespace of entity.getNamespaces()) {
       expect(id).toContain(namespace);

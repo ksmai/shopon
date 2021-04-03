@@ -1,14 +1,16 @@
 import { Either, right } from 'fp-ts/lib/Either';
 import * as uuid from 'uuid';
 
+import { DomainObject } from './domain-object';
 import { ValueObject } from './value-object';
 import { AppError } from '@shopon/shared/error';
 
-@ValueObject()
-export class Guid {
+@DomainObject()
+export class Guid extends ValueObject {
   private guid: string;
 
   private constructor(guid: string) {
+    super();
     this.guid = guid;
   }
 
