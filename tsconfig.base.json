@@ -24,7 +24,10 @@
         "libs/homepage/default-layout/src/index.ts"
       ],
       "@shopon/accounts/db": ["libs/accounts/db/src/index.ts"],
-      "@shopon/accounts/application": ["libs/accounts/application/src/index.ts"]
+      "@shopon/accounts/application": [
+        "libs/accounts/application/src/index.ts"
+      ],
+      "@shopon/accounts/domain": ["libs/accounts/domain/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

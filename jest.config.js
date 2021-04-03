@@ -5,5 +5,6 @@ module.exports = {
     '<rootDir>/libs/homepage/default-layout',
     '<rootDir>/libs/accounts/module',
     '<rootDir>/libs/accounts/db',
+    '<rootDir>/libs/accounts/domain',
   ],
 };
