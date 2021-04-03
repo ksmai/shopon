@@ -18,4 +18,8 @@ export abstract class Entity {
   getId(): Guid {
     return this.id;
   }
+
+  equals(other: this): boolean {
+    return this.getId().equals(other.getId());
+  }
 }

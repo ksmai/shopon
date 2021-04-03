@@ -22,4 +22,17 @@ describe('Entity', () => {
       expect(id).toContain(namespace);
     }
   });
+
+  it('different entities are not equal', () => {
+    const entity = getOrElseW(fail)(TestEntity.create());
+    const entity2 = getOrElseW(fail)(TestEntity.create());
+    expect(entity.equals(entity2)).toBe(false);
+  });
+
+  it('entities with same ids are equal', () => {
+    const entity = getOrElseW(fail)(TestEntity.create());
+    const entity2 = getOrElseW(fail)(TestEntity.create());
+    entity2['id'] = entity.getId();
+    expect(entity.equals(entity2)).toBe(true);
+  });
 });
