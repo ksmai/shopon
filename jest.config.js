@@ -6,5 +6,7 @@ module.exports = {
     '<rootDir>/libs/accounts/module',
     '<rootDir>/libs/accounts/db',
     '<rootDir>/libs/accounts/domain',
+    '<rootDir>/libs/shared/error',
+    '<rootDir>/libs/shared/domain',
   ],
 };
