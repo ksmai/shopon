@@ -1,1 +1,1 @@
-export * from './lib/value-object.interface';
+export * from './lib/value-object';
