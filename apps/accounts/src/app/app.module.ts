@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
 
-import { AccountsModule } from '@shopon/accounts/application';
+import { AccountsApplicationModule } from '@shopon/accounts/application';
 
 @Module({
-  imports: [AccountsModule],
+  imports: [AccountsApplicationModule],
   controllers: [],
   providers: [],
 })
