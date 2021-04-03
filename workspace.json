@@ -210,27 +210,6 @@
         }
       }
     },
-    "accounts-controller": {
-      "root": "libs/accounts/controller",
-      "sourceRoot": "libs/accounts/controller/src",
-      "projectType": "library",
-      "targets": {
-        "lint": {
-          "executor": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["libs/accounts/controller/**/*.ts"]
-          }
-        },
-        "test": {
-          "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/accounts/controller"],
-          "options": {
-            "jestConfig": "libs/accounts/controller/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
     "accounts-db": {
       "root": "libs/accounts/db",
       "sourceRoot": "libs/accounts/db/src",
@@ -258,6 +237,27 @@
                 "command": "docker-compose -f libs/accounts/db/docker-compose.yml up"
               }
             ]
+          }
+        }
+      }
+    },
+    "accounts-application": {
+      "root": "libs/accounts/application",
+      "sourceRoot": "libs/accounts/application/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/accounts/application/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/accounts/application"],
+          "options": {
+            "jestConfig": "libs/accounts/application/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }
