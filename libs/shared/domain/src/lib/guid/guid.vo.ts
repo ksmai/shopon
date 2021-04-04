@@ -16,12 +16,12 @@ export class Guid extends ValueObject {
     this.guid = guid;
   }
 
-  static create(...namespaces: string[]): Either<BaseError, Guid> {
+  public static create(...namespaces: string[]): Either<BaseError, Guid> {
     const guid = [...namespaces, uuid.v4()].join(':');
     return E.right(new Guid(guid));
   }
 
-  static fromString(guid: string): Either<BaseError, Guid> {
+  public static fromString(guid: string): Either<BaseError, Guid> {
     const lastPart = guid.split(':').slice(-1)[0];
     if (!uuid.validate(lastPart)) {
       return E.left(InvalidGuidStringError.of(guid));
@@ -29,11 +29,11 @@ export class Guid extends ValueObject {
     return E.right(new Guid(guid));
   }
 
-  equals(other: Guid): boolean {
+  public equals(other: Guid): boolean {
     return this.guid === other.guid;
   }
 
-  toString(): string {
+  public toString(): string {
     return this.guid;
   }
 }

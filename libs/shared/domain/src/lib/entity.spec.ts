@@ -5,11 +5,11 @@ import { Entity } from './entity';
 
 @DomainObject()
 class TestEntity extends Entity {
-  static create() {
+  public static create() {
     return E.right(new TestEntity());
   }
 
-  getNamespaces() {
+  public getNamespaces() {
     return ['shopon', 'test-entity'];
   }
 }

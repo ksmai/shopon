@@ -5,14 +5,14 @@ describe('BaseError', () => {
   const message = 'Message for TestError';
 
   class TestError extends BaseError {
-    error: typeof error;
+    public error: typeof error;
 
     private constructor() {
       super(message);
       this.error = error;
     }
 
-    static of(): TestError {
+    public static of(): TestError {
       return new TestError();
     }
   }

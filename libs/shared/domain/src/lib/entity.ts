@@ -15,11 +15,11 @@ export abstract class Entity {
 
   protected abstract getNamespaces(): string[];
 
-  getId(): Guid {
+  public getId(): Guid {
     return this.id;
   }
 
-  equals(other: this): boolean {
+  public equals(other: this): boolean {
     return this.getId().equals(other.getId());
   }
 }

@@ -5,7 +5,7 @@ export abstract class BaseError extends Error {
     super(message);
   }
 
-  toJSON() {
+  public toJSON() {
     return {
       error: this.error,
       message: this.message,
