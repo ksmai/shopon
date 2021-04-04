@@ -1,6 +1,6 @@
-import { AppError } from '@shopon/shared/error';
+import { BaseError } from '@shopon/shared/error';
 
-export class InvalidGuidStringError extends AppError {
+export class InvalidGuidStringError extends BaseError {
   error: 'ERR_INVALID_GUID_STRING';
 
   private constructor(guid: string) {

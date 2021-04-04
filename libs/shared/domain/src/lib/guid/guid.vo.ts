@@ -2,7 +2,7 @@ import { Either } from 'fp-ts/lib/Either';
 import * as E from 'fp-ts/lib/Either';
 import * as uuid from 'uuid';
 
-import { AppError } from '@shopon/shared/error';
+import { BaseError } from '@shopon/shared/error';
 import { DomainObject } from '../domain-object';
 import { ValueObject } from '../value-object';
 import { InvalidGuidStringError } from './invalid-guid-string.error';
@@ -16,12 +16,12 @@ export class Guid extends ValueObject {
     this.guid = guid;
   }
 
-  static create(...namespaces: string[]): Either<AppError, Guid> {
+  static create(...namespaces: string[]): Either<BaseError, Guid> {
     const guid = [...namespaces, uuid.v4()].join(':');
     return E.right(new Guid(guid));
   }
 
-  static fromString(guid: string): Either<AppError, Guid> {
+  static fromString(guid: string): Either<BaseError, Guid> {
     const lastPart = guid.split(':').slice(-1)[0];
     if (!uuid.validate(lastPart)) {
       return E.left(InvalidGuidStringError.of(guid));

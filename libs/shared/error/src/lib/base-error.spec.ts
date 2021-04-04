@@ -1,10 +1,10 @@
-import { AppError } from './app-error';
+import { BaseError } from './base-error';
 
-describe('AppError', () => {
+describe('BaseError', () => {
   const error = 'ERR_TEST_ERROR';
   const message = 'Message for TestError';
 
-  class TestError extends AppError {
+  class TestError extends BaseError {
     error: typeof error;
 
     private constructor() {

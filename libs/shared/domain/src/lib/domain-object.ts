@@ -1,9 +1,9 @@
 import { Either } from 'fp-ts/lib/Either';
 
-import { AppError } from '@shopon/shared/error';
+import { BaseError } from '@shopon/shared/error';
 
 interface DomainObjectConstructor<T> {
-  create(...args: unknown[]): Either<AppError, T>;
+  create(...args: unknown[]): Either<BaseError, T>;
 }
 
 type Instance<T> = T extends { prototype: infer P } ? P : never;
