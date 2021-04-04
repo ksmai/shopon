@@ -1,6 +1,7 @@
-import { Either, right } from 'fp-ts/lib/Either';
+import { Either } from 'fp-ts/lib/Either';
+import * as E from 'fp-ts/lib/Either';
 
-import { AppError } from '@shopon/shared/error';
+import { BaseError } from '@shopon/shared/error';
 import { DomainObject, Entity } from '@shopon/shared/domain';
 
 export interface CreateAccountData {
@@ -22,8 +23,8 @@ export class Account extends Entity {
     this.password = password;
   }
 
-  static create(data: CreateAccountData): Either<AppError, Account> {
-    return right(new Account(data.name, data.email, data.password));
+  static create(data: CreateAccountData): Either<BaseError, Account> {
+    return E.right(new Account(data.name, data.email, data.password));
   }
 
   getNamespaces(): string[] {

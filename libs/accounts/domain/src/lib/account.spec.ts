@@ -1,4 +1,4 @@
-import { getOrElseW } from 'fp-ts/lib/Either';
+import * as E from 'fp-ts/lib/Either';
 
 import { Account, CreateAccountData } from './account';
 
@@ -15,17 +15,17 @@ describe('Account', () => {
     });
 
     it('can be created with name', () => {
-      const account = getOrElseW(fail)(Account.create(data));
+      const account = E.getOrElseW(fail)(Account.create(data));
       expect(account.getName()).toBe(data.name);
     });
 
     it('can be created with email', () => {
-      const account = getOrElseW(fail)(Account.create(data));
+      const account = E.getOrElseW(fail)(Account.create(data));
       expect(account.getEmail()).toBe(data.email);
     });
 
     it('can be created with password', () => {
-      const account = getOrElseW(fail)(Account.create(data));
+      const account = E.getOrElseW(fail)(Account.create(data));
       expect(account.getPassword()).toBe(data.password);
     });
   });

@@ -1,4 +1,4 @@
-import { isLeft } from 'fp-ts/lib/Either';
+import * as E from 'fp-ts/lib/Either';
 
 import { Guid } from './guid';
 
@@ -7,7 +7,7 @@ export abstract class Entity {
 
   protected constructor() {
     const guid = Guid.create(...this.getNamespaces());
-    if (isLeft(guid)) {
+    if (E.isLeft(guid)) {
       throw new Error('Cannot generate guid');
     }
     this.id = guid.right;
