@@ -1,34 +1,40 @@
 import { AppError } from './app-error';
 
 describe('AppError', () => {
-  it('default to ERR_UNKNOWN', () => {
-    const error = new AppError();
-    expect(error.error).toBe('ERR_UNKNOWN');
+  const error = 'ERR_TEST_ERROR';
+  const message = 'Message for TestError';
+
+  class TestError extends AppError {
+    error: typeof error;
+
+    private constructor() {
+      super(message);
+      this.error = error;
+    }
+
+    static of(): TestError {
+      return new TestError();
+    }
+  }
+
+  let testError: TestError;
+
+  beforeEach(() => {
+    testError = TestError.of();
   });
 
-  it('can define a custom error', () => {
-    const aCustomError = 'ERR_A_CUSTOM_ERROR';
-    const error = new AppError(aCustomError);
-    expect(error.error).toBe(aCustomError);
+  it('can define a custom error in subclass', () => {
+    expect(testError.error).toBe(error);
   });
 
-  it('default to an empty message', () => {
-    const error = new AppError();
-    expect(error.message).toBe('');
-  });
-
-  it('can define a custom message', () => {
-    const aCustomMessage = 'aCustomMessage';
-    const error = new AppError('ERROR', aCustomMessage);
-    expect(error.message).toBe(aCustomMessage);
+  it('can define a custom message in subclass', () => {
+    expect(testError.message).toBe(message);
   });
 
   it('can be serialized to JSON', () => {
-    const data = {
-      error: 'ERR_AN_ERROR',
-      message: 'a message',
-    };
-    const error = new AppError(data.error, data.message);
-    expect(JSON.parse(JSON.stringify(error))).toEqual(data);
+    expect(JSON.parse(JSON.stringify(testError))).toEqual({
+      error,
+      message,
+    });
   });
 });

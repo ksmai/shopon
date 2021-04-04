@@ -1,9 +1,14 @@
-export class AppError {
-  error: string;
-  message: string;
+export abstract class AppError extends Error {
+  abstract error: string;
 
-  constructor(error = 'ERR_UNKNOWN', message = '') {
-    this.error = error;
-    this.message = message;
+  protected constructor(message = '') {
+    super(message);
+  }
+
+  toJSON() {
+    return {
+      error: this.error,
+      message: this.message,
+    };
   }
 }
