@@ -1,9 +1,11 @@
-import { Either, right } from 'fp-ts/lib/Either';
+import { Either } from 'fp-ts/lib/Either';
+import * as E from 'fp-ts/lib/Either';
 import * as uuid from 'uuid';
 
+import { AppError } from '@shopon/shared/error';
 import { DomainObject } from '../domain-object';
 import { ValueObject } from '../value-object';
-import { AppError } from '@shopon/shared/error';
+import { InvalidGuidStringError } from './invalid-guid-string.error';
 
 @DomainObject()
 export class Guid extends ValueObject {
@@ -16,11 +18,15 @@ export class Guid extends ValueObject {
 
   static create(...namespaces: string[]): Either<AppError, Guid> {
     const guid = [...namespaces, uuid.v4()].join(':');
-    return right(new Guid(guid));
+    return E.right(new Guid(guid));
   }
 
   static fromString(guid: string): Either<AppError, Guid> {
-    return right(new Guid(guid));
+    const lastPart = guid.split(':').slice(-1)[0];
+    if (!uuid.validate(lastPart)) {
+      return E.left(InvalidGuidStringError.of(guid));
+    }
+    return E.right(new Guid(guid));
   }
 
   equals(other: Guid): boolean {
