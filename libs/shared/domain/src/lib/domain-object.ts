@@ -3,7 +3,7 @@ import { Either } from 'fp-ts/lib/Either';
 import { BaseError } from '@shopon/shared/error';
 
 interface DomainObjectConstructor<T> {
-  create(...args: unknown[]): Either<BaseError, T>;
+  create(params?: unknown): Either<BaseError, T>;
 }
 
 type Instance<T> = T extends { prototype: infer P } ? P : never;
