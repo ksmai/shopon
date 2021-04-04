@@ -1,8 +1,8 @@
 import { Either, right } from 'fp-ts/lib/Either';
 import * as uuid from 'uuid';
 
-import { DomainObject } from './domain-object';
-import { ValueObject } from './value-object';
+import { DomainObject } from '../domain-object';
+import { ValueObject } from '../value-object';
 import { AppError } from '@shopon/shared/error';
 
 @DomainObject()

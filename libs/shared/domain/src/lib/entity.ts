@@ -1,6 +1,6 @@
 import { isLeft } from 'fp-ts/lib/Either';
 
-import { Guid } from './guid.vo';
+import { Guid } from './guid';
 
 export abstract class Entity {
   protected id: Guid;
