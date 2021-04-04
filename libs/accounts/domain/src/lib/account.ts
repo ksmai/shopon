@@ -23,23 +23,23 @@ export class Account extends Entity {
     this.password = password;
   }
 
-  static create(data: CreateAccountData): Either<BaseError, Account> {
+  public static create(data: CreateAccountData): Either<BaseError, Account> {
     return E.right(new Account(data.name, data.email, data.password));
   }
 
-  getNamespaces(): string[] {
+  public getNamespaces(): string[] {
     return ['shopon', 'accounts'];
   }
 
-  getName(): string {
+  public getName(): string {
     return this.name;
   }
 
-  getEmail(): string {
+  public getEmail(): string {
     return this.email;
   }
 
-  getPassword(): string {
+  public getPassword(): string {
     return this.password;
   }
 }
