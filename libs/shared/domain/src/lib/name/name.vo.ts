@@ -8,7 +8,7 @@ import { EmptyNameError } from './empty-name.error';
 import { NameTooLongError } from './name-too-long.error';
 
 export interface CreateNameParams {
-  name: string;
+  readonly name: string;
 }
 
 export type CreateNameError = EmptyNameError | NameTooLongError;

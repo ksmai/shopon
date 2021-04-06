@@ -15,16 +15,16 @@ import {
 } from '@shopon/shared/domain';
 
 export interface CreateAccountParams {
-  name: string;
-  email: string;
-  password: string;
-  hashedPassword: string;
+  readonly name: string;
+  readonly email: string;
+  readonly password: string;
+  readonly hashedPassword: string;
 }
 
 interface ConstructAccountParams {
-  name: Name;
-  email: Email;
-  password: Password;
+  readonly name: Name;
+  readonly email: Email;
+  readonly password: Password;
 }
 
 export type CreateAccountError =

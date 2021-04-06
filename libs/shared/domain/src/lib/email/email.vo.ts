@@ -8,12 +8,12 @@ import { ValueObject } from '../value-object';
 import { InvalidEmailError } from './invalid-email.error';
 
 export interface CreateEmailParams {
-  email: string;
+  readonly email: string;
 }
 
 interface ConstructEmailParams {
-  displayed: string;
-  normalized: string;
+  readonly displayed: string;
+  readonly normalized: string;
 }
 
 export type CreateEmailError = InvalidEmailError;

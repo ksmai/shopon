@@ -12,8 +12,8 @@ import { WeakPasswordError } from './weak-password.error';
 import { HashPasswordError } from './hash-password.error';
 
 export interface CreatePasswordParams {
-  password: string;
-  hashedPassword: string;
+  readonly password: string;
+  readonly hashedPassword: string;
 }
 
 export type CreatePasswordError = WeakPasswordError;

@@ -39,26 +39,25 @@ describe('Account', () => {
     });
 
     it('cannot be created with empty name', () => {
-      data.name = '';
-      const account = Account.create(data);
+      const account = Account.create({ ...data, name: '' });
       expect(E.isLeft(account)).toBe(true);
     });
 
     it('cannot be created with very very long name', () => {
-      data.name = 'LongName'.repeat(10000);
-      const account = Account.create(data);
+      const account = Account.create({
+        ...data,
+        name: 'LongName'.repeat(10000),
+      });
       expect(E.isLeft(account)).toBe(true);
     });
 
     it('cannot be created with invalid email', () => {
-      data.email = 'invalidEmail';
-      const account = Account.create(data);
+      const account = Account.create({ ...data, email: 'invalidEmail' });
       expect(E.isLeft(account)).toBe(true);
     });
 
     it('cannot be created with weak password', () => {
-      data.password = '1';
-      const account = Account.create(data);
+      const account = Account.create({ ...data, password: '1' });
       expect(E.isLeft(account)).toBe(true);
     });
   });
