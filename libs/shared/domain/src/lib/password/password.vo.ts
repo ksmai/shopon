@@ -13,18 +13,18 @@ import { HashPasswordError } from './hash-password.error';
 
 export interface CreatePasswordParams {
   password: string;
-  hashed: string;
+  hashedPassword: string;
 }
 
 export type CreatePasswordError = WeakPasswordError;
 
 @DomainObject()
 export class Password extends ValueObject {
-  private hashed: string;
+  private hashedPassword: string;
 
   private constructor(params: CreatePasswordParams) {
     super();
-    this.hashed = params.hashed;
+    this.hashedPassword = params.hashedPassword;
   }
 
   public static create(
@@ -36,13 +36,13 @@ export class Password extends ValueObject {
     );
   }
 
-  public getHashed(): string {
-    return this.hashed;
+  public getHashedPassword(): string {
+    return this.hashedPassword;
   }
 
   public equals(other: Password): boolean {
     // to compare password, use comparePassword method instead
-    return this.hashed === other.hashed;
+    return this.hashedPassword === other.hashedPassword;
   }
 
   public comparePassword(
@@ -50,7 +50,7 @@ export class Password extends ValueObject {
   ): TaskEither<HashPasswordError, boolean> {
     return TE.tryCatchK(bcrypt.compare, HashPasswordError.of)(
       password,
-      this.hashed
+      this.hashedPassword
     );
   }
 }

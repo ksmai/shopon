@@ -8,18 +8,20 @@ describe('Password', () => {
 
   beforeEach(async () => {
     const password = 'P@ssw0rd!!';
-    const hashed = E.getOrElseW(fail)(await hashPassword(10)(password)());
-    params = { password, hashed };
+    const hashedPassword = E.getOrElseW(fail)(
+      await hashPassword(10)(password)()
+    );
+    params = { password, hashedPassword };
   });
 
   it('does not store plain password', () => {
     const password = E.getOrElseW(fail)(Password.create(params));
-    expect(password.getHashed()).toBeTruthy();
-    expect(password.getHashed()).not.toBe(params.password);
+    expect(password.getHashedPassword()).toBeTruthy();
+    expect(password.getHashedPassword()).not.toBe(params.password);
   });
 
   it('does not allow weak passwords', async () => {
-    const params = { password: '123', hashed: 'fake hash' };
+    const params = { password: '123', hashedPassword: 'fake hash' };
     const password = Password.create(params);
     expect(E.isLeft(password)).toBe(true);
   });
@@ -31,7 +33,10 @@ describe('Password', () => {
   });
 
   it('different password are not equal', () => {
-    const params2 = { password: 'An0th3rP@ssw0rd', hashed: 'fake hash' };
+    const params2 = {
+      password: 'An0th3rP@ssw0rd',
+      hashedPassword: 'fake hash',
+    };
     const password = E.getOrElseW(fail)(Password.create(params));
     const password2 = E.getOrElseW(fail)(Password.create(params2));
     expect(password.equals(password2)).toBe(false);

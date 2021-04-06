@@ -18,7 +18,7 @@ export interface CreateAccountParams {
   name: string;
   email: string;
   password: string;
-  hashed: string;
+  hashedPassword: string;
 }
 
 interface ConstructAccountParams {

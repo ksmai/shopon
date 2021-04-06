@@ -9,12 +9,14 @@ describe('Account', () => {
 
     beforeEach(async () => {
       const password = 'Str0ngP@ssW0rd!';
-      const hashed = E.getOrElseW(fail)(await hashPassword(10)(password)());
+      const hashedPassword = E.getOrElseW(fail)(
+        await hashPassword(10)(password)()
+      );
       data = {
         name: 'Account Name',
         email: 'test@example.com',
         password,
-        hashed,
+        hashedPassword,
       };
     });
 
