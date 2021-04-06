@@ -7,11 +7,11 @@ import { ValueObject } from '../value-object';
 import { EmptyNameError } from './empty-name.error';
 import { NameTooLongError } from './name-too-long.error';
 
-interface CreateNameParams {
+export interface CreateNameParams {
   name: string;
 }
 
-type CreateNameError = EmptyNameError | NameTooLongError;
+export type CreateNameError = EmptyNameError | NameTooLongError;
 
 @DomainObject()
 export class Name extends ValueObject {

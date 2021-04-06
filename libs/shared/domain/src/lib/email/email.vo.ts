@@ -7,7 +7,7 @@ import { DomainObject } from '../domain-object';
 import { ValueObject } from '../value-object';
 import { InvalidEmailError } from './invalid-email.error';
 
-interface CreateEmailParams {
+export interface CreateEmailParams {
   email: string;
 }
 
@@ -16,7 +16,7 @@ interface ConstructEmailParams {
   normalized: string;
 }
 
-type CreateEmailError = InvalidEmailError;
+export type CreateEmailError = InvalidEmailError;
 
 @DomainObject()
 export class Email extends ValueObject {
