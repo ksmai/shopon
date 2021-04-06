@@ -1,6 +1,6 @@
 import * as E from 'fp-ts/lib/Either';
 
-import { Account, CreateAccountParams } from './account';
+import { Account, CreateAccountParams } from './account.entity';
 import { hashPassword } from '@shopon/shared/domain';
 
 describe('Account', () => {
