@@ -6,7 +6,7 @@ import {
   PrimaryColumn,
 } from 'typeorm';
 
-export class BaseModel {
+export class Model {
   @PrimaryColumn()
   public id!: string;
 

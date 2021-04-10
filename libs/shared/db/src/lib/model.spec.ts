@@ -7,7 +7,7 @@ import {
   Repository,
 } from 'typeorm';
 
-import { BaseModel } from './base-model';
+import { Model } from './model';
 
 describe('BaseModel', () => {
   let repository: Repository<TestModel>;
@@ -100,7 +100,7 @@ function seconds(date?: Date | null) {
 }
 
 @Entity()
-class TestModel extends BaseModel {
+class TestModel extends Model {
   @Column()
   public data!: string;
 }
