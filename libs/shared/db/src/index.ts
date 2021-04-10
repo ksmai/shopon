@@ -1,1 +1,1 @@
-export * from './lib/shared-db';
+export * from './lib/base-model';
