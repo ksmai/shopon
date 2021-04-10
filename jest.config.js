@@ -8,5 +8,6 @@ module.exports = {
     '<rootDir>/libs/accounts/domain',
     '<rootDir>/libs/shared/error',
     '<rootDir>/libs/shared/domain',
+    '<rootDir>/libs/shared/db',
   ],
 };

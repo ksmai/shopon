@@ -290,6 +290,25 @@
           }
         }
       }
+    },
+    "shared-db": {
+      "root": "libs/shared/db",
+      "sourceRoot": "libs/shared/db/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": { "lintFilePatterns": ["libs/shared/db/**/*.ts"] }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/db"],
+          "options": {
+            "jestConfig": "libs/shared/db/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }

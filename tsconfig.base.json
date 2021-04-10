@@ -31,7 +31,8 @@
       ],
       "@shopon/accounts/domain": ["libs/accounts/domain/src/index.ts"],
       "@shopon/shared/error": ["libs/shared/error/src/index.ts"],
-      "@shopon/shared/domain": ["libs/shared/domain/src/index.ts"]
+      "@shopon/shared/domain": ["libs/shared/domain/src/index.ts"],
+      "@shopon/shared/db": ["libs/shared/db/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

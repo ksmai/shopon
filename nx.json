@@ -28,6 +28,7 @@
     "accounts-application": { "tags": [] },
     "accounts-domain": { "tags": [] },
     "shared-error": { "tags": [] },
-    "shared-domain": { "tags": [] }
+    "shared-domain": { "tags": [] },
+    "shared-db": { "tags": [] }
   }
 }
